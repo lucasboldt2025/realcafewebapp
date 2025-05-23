@@ -9,6 +9,13 @@ from pydantic import BaseModel
 import pandas as pd
 from fpdf import FPDF
 
+cd static
+touch .gitkeep
+cd ..
+git add static/.gitkeep
+git commit -m "Add .gitkeep to static folder so it is uploaded"
+git push
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
